@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('donatur', 'DonaturController');
+
+Route::resource('pemasukan-sosial', 'PemasukanSosialController');
+
+Route::resource('pengeluaran-sosial', 'PengeluaranSosialController');

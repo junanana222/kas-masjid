@@ -14,7 +14,10 @@ class CreateDonaturTable extends Migration
     public function up()
     {
         Schema::create('donatur', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('donatur_id');
+            $table->string('nama');
+            $table->string('no_telp');
+            $table->text('alamat')->nullable();
             $table->timestamps();
         });
     }
