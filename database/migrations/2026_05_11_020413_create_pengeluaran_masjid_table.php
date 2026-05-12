@@ -14,7 +14,13 @@ class CreatePengeluaranMasjidTable extends Migration
     public function up()
     {
         Schema::create('pengeluaran_masjid', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('pengeluaran_masjid_id');
+            $table->foreignId('kategori_id')->references('kategori_id')->on('kategori');
+            $table->string('uraian');
+            $table->decimal('nominal', 15, 2);
+            $table->date('tanggal');
+            $table->text('deksripsi')->nullable();
+            $table->string('dibuat_oleh');
             $table->timestamps();
         });
     }
